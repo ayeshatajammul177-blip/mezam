@@ -1,18 +1,26 @@
 body {
   background-color: #f0f0f0;
-  font-family: Arial;
-  text-align: center;
-  margin-top: 60px;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+
+  /* Center everything vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 20px;
 }
+
 
 .box {
   background-color: white;
   width: 320px;
-  margin: auto;
+  margin: 200px auto;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 5px gray;
