@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MezamFrontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+
+Frontend for Mezam, a client portal for resolving property-related issues through document uploads.
+>>>>>>> be829fe1eb4a43637fa4d77fcfd4483b958e4f98
