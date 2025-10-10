@@ -150,6 +150,10 @@ form select {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+/* Error message */ .error { 
+    color: red; font-size: 14px; margin-top: -10px; margin-bottom: 10px; display: none; 
+}
+
 
 button[type="submit"] {
   width: 100%;

@@ -15,7 +15,7 @@ html, body {
   min-height: 100vh;
   background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')
     no-repeat center center / cover;
-  color: rgb(11, 5, 131);
+  color: rgb(255, 255, 255);
 }
 
 /* Header */
@@ -72,7 +72,17 @@ nav ul li a:hover {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
-
+.logout-btn {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
 .dropdown-content a {
   color: #007bff;
   display: block;
@@ -107,7 +117,7 @@ nav ul li a:hover {
 }
 
 .hero h1 span {
-  color: #007bff;
+  color: #5786d3;
 }
 
 .hero p {
