@@ -7,18 +7,21 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import {FormpageComponent } from './pages/formpage/formpage.component';
 import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
     HomeComponent,
-    FormpageComponent
+    FormpageComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
