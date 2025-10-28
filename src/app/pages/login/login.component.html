@@ -1,18 +1,25 @@
-<h2>Login Page</h2>
+<div class="auth-container">
+  <h2>Login Page</h2>
 
 <div class="box">
-  <form>
-    <label for="username">Username</label>
-    <input type="text" id="username" placeholder="Enter your username">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="formData.email" name="email" required>
 
     <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Enter your password">
+    <input type="password" id="password" [(ngModel)]="formData.password" name="password" required>
 
-    <button type="submit" routerLink="/home">Login</button>
+  <!-- 🟡 Show success/error messages here -->
+  <p *ngIf="message" [ngClass]="{'error': message.includes('❌') || message.includes('⚠️'), 'success': message.includes('✅')}">
+    {{ message }}
+  </p>
+
+    <button type="submit">Login</button>
   </form>
 
   <p>
     Don’t have an account?
     <a routerLink="/signup">Sign up</a>
   </p>
+</div>
 </div>

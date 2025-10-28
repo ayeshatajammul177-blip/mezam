@@ -1,0 +1,30 @@
+<!-- Main Content -->
+<div class="container">
+  <h2>My Applications</h2>
+  <p>Review all your submitted applications.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th style="text-align:center;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let app of applications">
+        <td><strong>{{ app.name }}</strong></td>
+        <td>{{ app.email }}</td>
+        <td>{{ app.category }}</td>
+        <td>{{ app.date }}</td>
+       <td style="text-align:center;">{{ app.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!loading && !error && !applications.length" class="empty">
+    You have not submitted any applications yet.
+  </p>
+
+</div>

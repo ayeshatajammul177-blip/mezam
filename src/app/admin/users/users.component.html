@@ -1,0 +1,49 @@
+<header>
+  <div class="logo"><h1>MEZAM</h1></div>
+  <nav>
+    <ul>
+      <li><a href="#" routerLink="/admin/applications">Applications</a></li>
+      <li><a href="#" routerLink="/admin/users">Users</a></li>
+      <li><a href="#" routerLink="/admin-dashboard">Dashboard</a></li>
+    </ul>
+  </nav>
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</header>
+
+<div class="container">
+  <h2>Users</h2>
+  <p>Manage user accounts and permissions.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Joined</th>
+        <th style="text-align:center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td><strong>{{ user.fullName }}</strong></td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.createdAt | date: 'yyyy-MM-dd' }}</td>
+      <td class="actions">
+        <button class="delete-btn" (click)="openDeleteModal(user)">🗑️</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="modal-backdrop" *ngIf="showDeleteModal">
+  <div class="modal">
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete <strong>{{ selectedUser?.fullName }}</strong>?</p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeDeleteModal()">Cancel</button>
+      <button class="confirm-btn" (click)="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>
+
+</div>

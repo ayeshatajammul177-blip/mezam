@@ -1,0 +1,62 @@
+<!-- Header -->
+<header>
+  <div class="logo"><h1>MEZAM</h1></div>
+  <nav>
+    <ul>
+      <li><a routerLink="/admin/applications" routerLinkActive="active">Applications</a></li>
+      <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li>
+      <li><a routerLink="/admin-dashboard" routerLinkActive="active">Dashboard</a></li>
+
+    </ul>
+  </nav>
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <h2>Applications</h2>
+  <p>Manage and review all submitted applications.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th style="text-align:center;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let app of applications">
+        <td><strong>{{ app.name }}</strong></td>
+        <td>{{ app.email }}</td>
+        <td>{{ app.category }}</td>
+        <td>{{ app.date }}</td>
+        <td style="text-align:center;">
+          <!-- ✅ If not processed, show interactive dropdown -->
+          <ng-container *ngIf="app.status !== 'Processed'; else processedStatus">
+            <div class="status-dropdown">
+              <span class="status" [ngClass]="app.status.toLowerCase()">
+                {{ app.status }}
+              </span>
+              <div class="status-options">
+                <span
+                  class="status processed"
+                  (click)="updateStatus(app, 'Processed')"
+                >
+                  Processed
+                </span>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- ✅ If processed, show static badge -->
+          <ng-template #processedStatus>
+            <span class="status processed">Processed</span>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   standalone: false,
@@ -28,20 +28,24 @@ onSubmit() {
     return;
   }
 
-  this.authService.signup({
-    name: this.formData.fullName,  // adjust to match backend
-    email: this.formData.email,
-    password: this.formData.password
-  }).subscribe({
-    next: (response) => {
-      this.message = '✅ Signup successful!';
-      setTimeout(() => this.router.navigate(['/login']), 1500);
-    },
-    error: (err) => {
-      console.error(err);
-      this.message = '❌ Signup failed: ' + (err.error?.message || 'Try again later.');
-    }
-  });
+    const payload = {
+      fullName: this.formData.fullName,
+      email: this.formData.email,
+      password: this.formData.password,
+      role: 'Client'
+    };
+
+    this.authService.signup(payload).subscribe({
+      next: (response) => {
+        console.log('✅ Signup Success:', response);
+        this.message = '✅ Signup successful!';
+        setTimeout(() => this.router.navigate(['/login']), 1500);
+      },
+      error: (err) => {
+        console.error('❌ Signup Error:', err);
+        this.message = '❌ Signup failed: ' + (err.error?.message || 'Try again later.');
+      }
+    });
 }
 
 }

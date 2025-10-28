@@ -3,23 +3,26 @@ body {
   font-family: Arial, sans-serif;
   height: 100vh;
   margin: 0;
-
+  overflow: hidden;
   /* Center everything vertically and horizontally */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 110vh; /* adjust based on header/footer height */
+  margin-top: -30px; /* brings box slightly upward */
 }
 
 .box {
   background-color: white;
   width: 300px;
-  margin: 200px auto;
+  margin: 80px auto;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 5px gray;
@@ -58,6 +61,15 @@ button:hover {
 p {
   margin-top: 15px;
   text-align: center;
+}
+p.error {
+  color: #d9534f;
+  margin-top: 10px;
+}
+
+p.success {
+  color: #28a745;
+  margin-top: 10px;
 }
 
 a {

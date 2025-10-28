@@ -1,0 +1,21 @@
+/* Footer */
+footer {
+  background-color: #0056b3;
+  text-align: center;
+  padding: 15px 0;
+  color: #dcdcdc;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

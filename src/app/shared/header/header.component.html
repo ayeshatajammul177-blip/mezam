@@ -1,0 +1,23 @@
+  <header>
+    <div class="logo">
+      <h1>MEZAM</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li class="dropdown">
+          <a>Policies ▾</a>
+          <div class="dropdown-content">
+            <a href="javascript:void(0)" (click)="openPolicy('StTitle_Exchange_Policy.pdf')">Exchange Policy</a>
+            <a href="javascript:void(0)" (click)="openPolicy('StTitle_Loan_Policy.pdf')">Loan Policy</a>
+            <a href="javascript:void(0)" (click)="openPolicy('StTitle_Mortgage_Policy.pdf')">Mortgage & Conditions</a>
+          </div>
+        </li>
+        <li><a href="#" routerLink="/chatbot">Chatbot</a></li>
+        <li><a href="#" routerLink="/my-applications">My Applications</a></li>
+      </ul>
+    </nav>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>

@@ -1,0 +1,35 @@
+
+
+<!-- 💬 Chatbot Container -->
+<div class="chatbot-container">
+  <h2>💬 Mezam Chatbot</h2>
+
+  <!-- Model selector -->
+  <div class="model-select">
+    <label for="model">Choose Model:</label>
+    <select id="model" [(ngModel)]="selectedModel" (ngModelChange)="onModeChange($event)">
+      <option value="formalize">Formalize</option>
+      <option value="qa">QA</option>
+      <option value="summarizer">Summarizer</option>
+    </select>
+  </div>
+
+  <!-- Chat window -->
+  <div class="chat-window">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <p>{{ msg.text }}</p>
+    </div>
+  </div>
+
+  <!-- Input area -->
+  <div class="input-area">
+    <input
+      type="text"
+      placeholder="Type your message..."
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
+

@@ -1,0 +1,83 @@
+/* ----------------- Page Container ----------------- */
+.container {
+  padding: 40px;
+  padding-bottom: 220px;
+}
+
+h2 {
+  font-size: 32px;
+  color: #0057b7;
+  margin-bottom: 5px;
+}
+
+p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* ----------------- Table ----------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 300px;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #c0d3e7;
+  color: #0057b7;
+}
+
+tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* ----------------- Status Badges ----------------- */
+/* Reuse your original styles */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  min-width: 90px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.status:hover {
+  transform: scale(1.05);
+}
+
+.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.processed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.loading, .error, .empty {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+}
+
+.error {
+  color: #b91c1c;
+}
+

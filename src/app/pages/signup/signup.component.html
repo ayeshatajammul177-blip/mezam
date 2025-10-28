@@ -1,14 +1,16 @@
-<h2>Sign Up Page</h2>
+<div class="auth-container">
+<h2 class="signup">Sign Up Page</h2>
+
 
 <div class="box">
   <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-    <label for="username">Username</label>
+    <label for="username">Full Name</label>
     <input
       type="text"
       id="username"
       name="fullName"
       [(ngModel)]="formData.fullName"
-      placeholder="Enter your username"
+      placeholder="Enter your Full Name"
       required
     />
 
@@ -48,4 +50,5 @@
   <p class="message">{{ message }}</p>
   <p>Already have an account? <a routerLink="/login">Login</a></p>
 </div>
+</div>  
 

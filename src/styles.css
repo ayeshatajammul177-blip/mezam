@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+tml, body {
+  height: 100%;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* app-root wraps everything */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Footer styles (already exist but we ensure position) */
+app-footer {
+  margin-top: auto; /* pushes footer to bottom */
+  width: 100%;
+}
